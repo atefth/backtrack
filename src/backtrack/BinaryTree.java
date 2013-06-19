@@ -26,21 +26,27 @@ public class BinaryTree {
     
     public int makeValue(){
         
-        return r.nextInt(range);
+        int value = r.nextInt(range);
+        System.out.println("A random value of " + value + " is being put inside a node.");
+        return value;
         
     }
     
     public void generateTree(){
         
+        System.out.println("Generating Tree...");
         root = new Node(makeValue());
         Node currentNode = root;
         
         for (int i = 0; i < height; i++){
             
-            if (!currentNode.append(new Node(makeValue())))
-                currentNode = currentNode.left();
+            for (int j = 0; j < 2; j++){
+                if (!currentNode.append(new Node(makeValue())))
+                    currentNode = currentNode.left();
+            }
             
         }
+        System.out.println("Left aligned tree generated.");
         
     }
     

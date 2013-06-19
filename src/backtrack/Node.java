@@ -126,14 +126,12 @@ public class Node {
         
     }
 
-    //append Node n to this Node's children
-//    public boolean appendToChildren(Node n) {
-//        if (this.left.append(n))
-//            return true;
-//        else if (this.right.append(n))
-//            return true;
-//        else
-//            return false;
-//    }
+    //checks if this node is a leaf node
+    public boolean isLeafNode() {
+        if (this.left == null && this.right == null)
+            return true;
+        else
+            return false;
+    }
     
 }
